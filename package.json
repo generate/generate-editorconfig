@@ -47,6 +47,13 @@
     "plugins": [
       "gulp-format-md"
     ],
+    "related": {
+      "list": [
+        "generate-package",
+        "generate-license",
+        "generate-travis"
+      ]
+    },
     "reflinks": [
       "generate",
       "verb",
