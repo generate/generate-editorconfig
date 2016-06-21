@@ -10,12 +10,13 @@
   },
   "license": "MIT",
   "files": [
+    "generator.js",
     "index.js",
     "templates"
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=5.0"
   },
   "scripts": {
     "test": "mocha"
@@ -32,11 +33,38 @@
     "npm-install-global": "^0.1.2"
   },
   "keywords": [
+    "app",
+    "boilerplate",
+    "build",
+    "cli",
+    "cli-app",
+    "command-line",
+    "create",
+    "dev",
+    "development",
     "editorconfig",
+    "framework",
+    "front",
+    "frontend",
     "generate",
     "generateplugin",
     "generator",
-    "plugin"
+    "init",
+    "initialize",
+    "new",
+    "plugin",
+    "project",
+    "projects",
+    "scaffold",
+    "scaffolder",
+    "scaffolding",
+    "template",
+    "templates",
+    "tool",
+    "web",
+    "webapp",
+    "yeoman",
+    "yo"
   ],
   "verb": {
     "toc": false,
@@ -49,8 +77,8 @@
     ],
     "related": {
       "list": [
-        "generate-package",
         "generate-license",
+        "generate-package",
         "generate-travis"
       ]
     },
