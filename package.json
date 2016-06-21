@@ -10,7 +10,8 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "templates"
   ],
   "main": "index.js",
   "engines": {
@@ -20,23 +21,39 @@
     "test": "mocha"
   },
   "dependencies": {
-    "engine-base": "^0.1.2"
+    "engine-base": "^0.1.2",
+    "is-valid-app": "^0.1.1"
   },
   "devDependencies": {
-    "gulp-format-md": "*",
-    "mocha": "*"
+    "delete": "^0.3.2",
+    "generate": "^0.7.3",
+    "gulp-format-md": "^0.1.9",
+    "mocha": "^2.5.3",
+    "npm-install-global": "^0.1.2"
   },
-  "keywords": [],
+  "keywords": [
+    "editorconfig",
+    "generate",
+    "generateplugin",
+    "generator",
+    "plugin"
+  ],
   "verb": {
-    "layout": "default",
+    "toc": false,
+    "layout": "generator",
+    "tasks": [
+      "readme"
+    ],
     "plugins": [
       "gulp-format-md"
     ],
-    "related": {
-      "list": []
-    },
     "reflinks": [
-      "verb"
-    ]
+      "generate",
+      "verb",
+      "verb-readme-generator"
+    ],
+    "lint": {
+      "reflinks": true
+    }
   }
 }

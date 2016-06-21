@@ -1,9 +1,11 @@
 'use strict';
 
 var path = require('path');
+var isValid = require('is-valid-app');
 var src = path.resolve.bind(path, __dirname, 'templates');
 
 module.exports = function(app, base) {
+  if (!isValid(app, 'generate-editorconfig')) return;
   var dest = app.options.dest || app.cwd;
 
   app.task('editorconfig', function(cb) {
