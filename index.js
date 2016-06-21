@@ -4,19 +4,27 @@ var path = require('path');
 var isValid = require('is-valid-app');
 var src = path.resolve.bind(path, __dirname, 'templates');
 
-module.exports = function(app, base) {
+module.exports = function(app) {
+  // return if the generator is already registered
   if (!isValid(app, 'generate-editorconfig')) return;
-  var dest = app.options.dest || app.cwd;
+
+  /**
+   * Generate a `.editorconfig` file to the current working directory.
+   *
+   * ```sh
+   * $ gen editorconfig
+   * ```
+   * @name editorconfig
+   * @api public
+   */
 
   app.task('editorconfig', function(cb) {
-    app.engine('*', require('engine-base'));
-    return app.src(src('_editorconfig'))
-      .pipe(app.renderFile('*'))
+    var dest = app.option('dest') || app.cwd;
+
+    app.template(src('_editorconfig'));
+    return app.toStream('templates')
       .pipe(app.conflicts(dest))
-      .pipe(app.dest(function(file) {
-        file.basename = '.editorconfig';
-        return dest;
-      }))
+      .pipe(app.dest(dest));
   });
 
   app.task('default', ['editorconfig']);

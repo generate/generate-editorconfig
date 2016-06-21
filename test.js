@@ -33,7 +33,6 @@ describe('generate-editorconfig', function() {
 
   beforeEach(function() {
     app = generate({silent: true});
-    app.cwd = cwd();
     app.option('dest', cwd());
   });
 

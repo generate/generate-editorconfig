@@ -1,3 +1,7 @@
+---
+rename:
+  basename: '.editorconfig'
+---
 # http://editorconfig.org
 root = true
 
