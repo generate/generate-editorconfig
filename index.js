@@ -9,7 +9,9 @@ module.exports = function(app) {
   if (!isValid(app, 'generate-editorconfig')) return;
 
   /**
-   * Generate a `.editorconfig` file to the current working directory.
+   * Generate a `.editorconfig` file to the current working directory. You can override
+   * the default template by adding a custom template at the following path:
+   * `~/templates/_editorconfig` (in user home).
    *
    * ```sh
    * $ gen editorconfig
