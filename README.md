@@ -2,7 +2,7 @@
 
 The generator creates a `.editorconfig` file in the current working directory. Run from the command line or register as a sub-generator or plugin in your own generator.
 
-![generate-editorconfig demo](demo.md)
+![generate-editorconfig demo](https://raw.githubusercontent.com/generate/generate-editorconfig/master/demo.md)
 
 ## What is "Generate"?
 
