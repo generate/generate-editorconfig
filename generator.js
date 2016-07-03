@@ -10,8 +10,8 @@ module.exports = function(app) {
 
   /**
    * Generate a `.editorconfig` file to the current working directory. You can override
-   * the default template by adding a custom template at the following path:
-   * `~/templates/_editorconfig` (in user home).
+   * the default template by adding a custom template to the `templates` directory in
+   * user home, at the following path: `~/templates/_editorconfig`
    *
    * ```sh
    * $ gen editorconfig
@@ -34,11 +34,11 @@ module.exports = function(app) {
 
 /**
  * Pick the file to render. If the user specifies a `--file`, use that,
- * otherwise use the default `$package.json` template
+ * otherwise use the default `_editorconfig` template
  */
 
-function pickFile(app, fallback) {
+function pickFile(app) {
   return function(key, file) {
-    return file.stem === (app.option('file') || fallback || '.editorconfig');
+    return file.stem === (app.option('file') || '.editorconfig');
   };
 }
