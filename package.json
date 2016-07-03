@@ -1,6 +1,6 @@
 {
   "name": "generate-editorconfig",
-  "description": "Generate a `.editorconfig` file. Use as a sub-generator or plugin in your own generator.",
+  "description": "The generator creates a `.editorconfig` file in the current working directory. Run from the command line or register as a sub-generator or plugin in your own generator.",
   "version": "0.1.2",
   "homepage": "https://github.com/generate/generate-editorconfig",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
@@ -24,12 +24,11 @@
     "test": "mocha"
   },
   "dependencies": {
-    "engine-base": "^0.1.2",
-    "is-valid-app": "^0.1.1"
+    "is-valid-app": "^0.2.0"
   },
   "devDependencies": {
     "delete": "^0.3.2",
-    "generate": "^0.7.3",
+    "generate": "^0.8.0",
     "gulp-format-md": "^0.1.9",
     "mocha": "^2.5.3",
     "npm-install-global": "^0.1.2"
@@ -71,7 +70,7 @@
   ],
   "verb": {
     "toc": false,
-    "layout": "generator",
+    "layout": "common-minimal",
     "tasks": [
       "readme"
     ],
@@ -87,6 +86,7 @@
     },
     "reflinks": [
       "generate",
+      "generate-dest",
       "verb",
       "verb-readme-generator"
     ],
