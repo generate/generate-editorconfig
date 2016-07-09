@@ -2,7 +2,6 @@
 
 var path = require('path');
 var isValid = require('is-valid-app');
-var src = path.resolve.bind(path, __dirname, 'templates');
 
 module.exports = function(app) {
   // return if the generator is already registered
@@ -22,22 +21,9 @@ module.exports = function(app) {
 
   app.task('default', ['editorconfig']);
   app.task('editorconfig', function(cb) {
-    var dest = app.option('dest') || app.cwd;
-
-    app.template(src('_editorconfig'));
-    return app.toStream('templates', pickFile(app))
+    var dest = app.options.dest || app.cwd;
+    return app.src('templates/_editorconfig', {cwd: __dirname})
       .pipe(app.conflicts(dest))
       .pipe(app.dest(dest));
   });
 };
-
-/**
- * Pick the file to render. If the user specifies a `--file`, use that,
- * otherwise use the default `_editorconfig` template
- */
-
-function pickFile(app) {
-  return function(key, file) {
-    return file.stem === (app.option('file') || '.editorconfig');
-  };
-}
