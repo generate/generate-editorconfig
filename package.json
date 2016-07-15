@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "delete": "^0.3.2",
-    "generate": "^0.8.0",
+    "generate": "^0.9.7",
+    "global-modules": "^0.2.2",
     "gulp-format-md": "^0.1.9",
     "mocha": "^2.5.3",
     "npm-install-global": "^0.1.2"
@@ -48,6 +49,8 @@
     "front",
     "frontend",
     "generate",
+    "generate-generator",
+    "generate-plugin",
     "generategenerator",
     "generateplugin",
     "generator",
@@ -81,6 +84,7 @@
       "list": [
         "generate-license",
         "generate-package",
+        "generate-readme",
         "generate-travis"
       ]
     },
