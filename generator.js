@@ -1,6 +1,5 @@
 'use strict';
 
-var path = require('path');
 var isValid = require('is-valid-app');
 
 module.exports = function(app) {
@@ -21,9 +20,8 @@ module.exports = function(app) {
 
   app.task('default', ['editorconfig']);
   app.task('editorconfig', function(cb) {
-    var dest = app.options.dest || app.cwd;
-    return app.src('templates/_editorconfig', {cwd: __dirname})
-      .pipe(app.conflicts(dest))
-      .pipe(app.dest(dest));
+    return app.src('templates/_editorconfig', { cwd: __dirname })
+      .pipe(app.conflicts(app.cwd))
+      .pipe(app.dest(app.cwd));
   });
 };

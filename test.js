@@ -6,20 +6,33 @@ var path = require('path');
 var assert = require('assert');
 var generate = require('generate');
 var npm = require('npm-install-global');
+var gm = require('global-modules');
 var del = require('delete');
 var generator = require('./');
 var app;
 
-var cwd = path.resolve.bind(path, __dirname, 'actual');
+var actual = path.resolve.bind(path, __dirname, 'actual');
+function symlink(dir, cb) {
+  var src = path.resolve(dir);
+  var name = path.basename(src);
+  var dest = path.resolve(gm, name);
+  fs.stat(dest, function(err, stat) {
+    if (err) {
+      fs.symlink(src, dest, cb);
+    } else {
+      cb();
+    }
+  });
+}
 
 function exists(name, cb) {
   return function(err) {
     if (err) return cb(err);
-    var filepath = cwd(name);
+    var filepath = actual(name);
     fs.stat(filepath, function(err, stat) {
       if (err) return cb(err);
       assert(stat);
-      del(path.dirname(filepath), cb);
+      cb();
     });
   };
 }
@@ -33,7 +46,12 @@ describe('generate-editorconfig', function() {
 
   beforeEach(function() {
     app = generate({silent: true});
-    app.option('dest', cwd());
+    app.option('dest', actual());
+    app.cwd = actual();
+  });
+
+  afterEach(function(cb) {
+    del(actual(), cb);
   });
 
   describe('plugin', function() {
@@ -80,6 +98,10 @@ describe('generate-editorconfig', function() {
 
   if (!process.env.CI && !process.env.TRAVIS) {
     describe('generator (CLI)', function() {
+      before(function(cb) {
+        symlink(__dirname, cb);
+      });
+
       it('should run the default task using the `generate-editorconfig` name', function(cb) {
         app.use(generator);
         app.generate('generate-editorconfig', exists('.editorconfig', cb));
