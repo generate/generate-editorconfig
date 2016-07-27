@@ -68,7 +68,7 @@ $ gen dest eslint
 
 **Overriding templates**
 
-You can override any of the templates by adding a template of the same name to the `templates` directory in user home. For example, to override the `.editorconfig` template, add a template at the following path `~/templates/.editorconfig`.
+You can override any of the templates by adding a template of the same name to the `templates` directory in user home. For example, to override the `.editorconfig` template, add a template at the following path `~/templates/_editorconfig`.
 
 ## About
 
