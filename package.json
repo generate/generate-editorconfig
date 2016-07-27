@@ -70,7 +70,7 @@
   ],
   "verb": {
     "toc": false,
-    "layout": "common-minimal",
+    "layout": "generator",
     "tasks": [
       "readme"
     ],
@@ -89,7 +89,10 @@
       "generate",
       "generate-dest",
       "verb",
-      "verb-readme-generator"
+      "verb-readme-generator",
+      "assemble",
+      "base",
+      "gulp"
     ],
     "lint": {
       "reflinks": true

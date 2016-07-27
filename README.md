@@ -1,20 +1,33 @@
-# generate-editorconfig [![NPM version](https://img.shields.io/npm/v/generate-editorconfig.svg?style=flat)](https://www.npmjs.com/package/generate-editorconfig) [![NPM downloads](https://img.shields.io/npm/dm/generate-editorconfig.svg?style=flat)](https://npmjs.org/package/generate-editorconfig) [![Build Status](https://img.shields.io/travis/generate/generate-editorconfig.svg?style=flat)](https://travis-ci.org/generate/generate-editorconfig)
+<p align="center">
+
+<a href="https://github.com/generate/generate">
+<img height="150" width="150" src="https://raw.githubusercontent.com/generate/generate/master/docs/logo.png">
+</a>
+</p>
 
 The generator creates a `.editorconfig` file in the current working directory. Run from the command line or register as a sub-generator or plugin in your own generator.
 
-![generate-editorconfig demo](https://raw.githubusercontent.com/generate/generate-editorconfig/master/demo.gif)
+# generate-editorconfig
+
+[![NPM version](https://img.shields.io/npm/v/generate-editorconfig.svg?style=flat)](https://www.npmjs.com/package/generate-editorconfig) [![NPM downloads](https://img.shields.io/npm/dm/generate-editorconfig.svg?style=flat)](https://npmjs.org/package/generate-editorconfig) [![Build Status](https://img.shields.io/travis/generate/generate-editorconfig.svg?style=flat)](https://travis-ci.org/generate/generate-editorconfig)
+
+![generate-editorconfig demo](https://raw.githubusercontent.com/generate/generate-editorconfig/master/docs/demo.gif)
 
 ## What is "Generate"?
 
-[Generate](https://github.com/generate/generate) is a command line tool and developer framework for scaffolding out new GitHub projects.
+Generate is a command line tool and developer framework for scaffolding out new GitHub projects using [generators](https://github.com/generate/generate/blob/master/docs/generators.md) and [tasks](https://github.com/generate/generate/blob/master/docs/tasks.md).
 
-For more information:
+Answers to prompts and the user's environment can be used to determine the templates, directories, files and contents to build. Support for [gulp](http://gulpjs.com), [base](https://github.com/node-base/base) and [assemble](https://github.com/assemble/assemble) plugins, and much more.
 
-* Visit the [generate project](https://github.com/generate/generate)
+**For more information**:
+
+* Visit the [generate project](https://github.com/generate/generate/)
 * Visit the [generate documentation](https://github.com/generate/generate/blob/master/docs/)
-* Find [generators on npm](https://www.npmjs.com/browse/keyword/generate-generator) (help us [author micro-generators](https://github.com/generate/generate/blob/master/docs/micro-generators.md))
+* Find [generators on npm](https://www.npmjs.com/browse/keyword/generate-generator) (help us [author generators](https://github.com/generate/generate/blob/master/docs/micro-generators.md))
 
-## Install
+## Getting started
+
+### Install
 
 **Installing the CLI**
 
@@ -34,17 +47,19 @@ Install this module with the following command:
 $ npm install --global generate-editorconfig
 ```
 
-## Usage
+### Usage
 
-Run this generator's `default` [task](https://github.com/generate/generate/blob/master/docs/docs/tasks.md#default-task) with the following command:
+Run this generator's `default` [task](https://github.com/generate/generate/blob/master/docs/tasks.md#default) with the following command:
 
 ```sh
 $ gen editorconfig
 ```
 
-## Available Tasks
+### Tasks
 
-### [editorconfig](generator.js#L19)
+All available tasks.
+
+#### [editorconfig](generator.js#L19)
 
 Generates a `.editorconfig` file to the current working directory. You can override the default template by adding a custom template to the `templates` directory in user home, at the following path: `~/templates/_editorconfig`
 
@@ -56,20 +71,6 @@ $ gen editorconfig
 
 Visit Generate's [documentation for tasks](https://github.com/generate/generate/blob/master/docs/tasks.md).
 
-## Customization
-
-**Destination directory**
-
-Install [generate-dest](https://github.com/generate/generate-dest) globally to customize the destination directory. Once installed, just prefix `dest` before any other generator names. For example:
-
-```sh
-$ gen dest eslint
-```
-
-**Overriding templates**
-
-You can override any of the templates by adding a template of the same name to the `templates` directory in user home. For example, to override the `.editorconfig` template, add a template at the following path `~/templates/_editorconfig`.
-
 ## About
 
 ### Related projects
@@ -78,6 +79,18 @@ You can override any of the templates by adding a template of the same name to t
 * [generate-package](https://www.npmjs.com/package/generate-package): Generate] a package.json from a pre-defined or user-defined template. This generator can be used from… [more](https://github.com/generate/generate-package) | [homepage](https://github.com/generate/generate-package "[Generate] a package.json from a pre-defined or user-defined template. This generator can be used from the command line when globally installed, or as a plugin or sub-generator in your own generator.")
 * [generate-readme](https://www.npmjs.com/package/generate-readme): Generate a README.md using answers to prompts and data from the environment, like `package.json`, `.git… [more](https://github.com/generate/generate-readme) | [homepage](https://github.com/generate/generate-readme "Generate a README.md using answers to prompts and data from the environment, like`package.json`,`.git` config, etc. This generator can be run by command line if Generate is installed globally, or you can use this as a plugin or sub-generator in your own")
 * [generate-travis](https://www.npmjs.com/package/generate-travis): Generate a .travis.yml file to the cwd or specified directory. Install globally and run with… [more](https://github.com/generate/generate-travis) | [homepage](https://github.com/generate/generate-travis "Generate a .travis.yml file to the cwd or specified directory. Install globally and run with generate's CLI, or use as a component in your own generator.")
+
+### Community
+
+Are you using [Generate](https://github.com/generate/generate) in your project? Have you published a [generator](https://github.com/generate/generate/blob/master/docs/generators.md) and want to share your project with the world?
+
+Here are some suggestions!
+
+* If you get like Generate and want to tweet about it, please feel free to mention `@generatejs` or use the `#generatejs` hashtag
+* Show your love by starring [Generate](https://github.com/generate/generate) and `generate-editorconfig`
+* Get implementation help on [StackOverflow](http://stackoverflow.com/questions/tagged/generate) (please use the `generatejs` tag in questions)
+* **Gitter** Discuss Generate with us on [Gitter](https://gitter.im/generate/generate)
+* If you publish an generator, thank you! To make your project as discoverable as possible, please add the keyword `generategenerator` to package.json.
 
 ### Contributing
 
