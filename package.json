@@ -23,9 +23,6 @@
   "scripts": {
     "test": "mocha"
   },
-  "dependencies": {
-    "is-valid-app": "^0.2.0"
-  },
   "devDependencies": {
     "delete": "^0.3.2",
     "generate": "^0.9.7",
