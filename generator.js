@@ -1,8 +1,10 @@
 'use strict';
 
+var isValid = require('is-valid-app');
+
 module.exports = function(app) {
   // return if the generator is already registered
-  if (!this.isValid(app, 'generate-editorconfig')) return;
+  if (!isValid(app, 'generate-editorconfig')) return;
 
   /**
    * Generates a `.editorconfig` file to the current working directory. You can override

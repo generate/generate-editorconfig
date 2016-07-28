@@ -23,6 +23,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "dependencies": {
+    "is-valid-app": "^0.2.0"
+  },
   "devDependencies": {
     "delete": "^0.3.2",
     "generate": "^0.9.7",
@@ -86,13 +89,13 @@
       ]
     },
     "reflinks": [
-      "generate",
-      "generate-dest",
-      "verb",
-      "verb-readme-generator",
       "assemble",
       "base",
-      "gulp"
+      "generate",
+      "generate-dest",
+      "gulp",
+      "verb",
+      "verb-readme-generator"
     ],
     "lint": {
       "reflinks": true
