@@ -7,12 +7,6 @@ module.exports = function(app) {
   if (!isValid(app, 'generate-editorconfig')) return;
 
   /**
-   * Register instance plugins to use
-   */
-
-  app.use(require('generate-defaults'));
-
-  /**
    * Generates a `.editorconfig` file to the current working directory. You can override
    * the default template by adding a custom template to the `templates` directory in
    * user home, at the following path: `~/templates/_editorconfig`
@@ -28,6 +22,9 @@ module.exports = function(app) {
   app.task('editorconfig', function(cb) {
     return app.src('templates/_editorconfig', { cwd: __dirname })
       .pipe(app.conflicts(app.cwd))
-      .pipe(app.dest(app.cwd));
+      .pipe(app.dest(function(file) {
+        file.basename = '.editorconfig';
+        return app.cwd;
+      }))
   });
 };
